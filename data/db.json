@@ -1,0 +1,80 @@
+{
+  "_version": 5,
+  "shops": [
+    {"id": 0, "name": "Highway Branch", "code": "highway"},
+    {"id": 1, "name": "Mainroad Branch", "code": "mainroad"}
+  ],
+  "vendors": [
+    {"id": "v1", "name": "Sri Flour Mills", "phone": "9876543210", "address": "Industrial Area", "is_active": true},
+    {"id": "v2", "name": "Amul Dairy", "phone": "9876543211", "address": "Dairy Road", "is_active": true},
+    {"id": "v3", "name": "Sugar World", "phone": "9876543212", "address": "Market St", "is_active": true},
+    {"id": "v4", "name": "Fresh Eggs Farm", "phone": "9876543213", "address": "Farm Lane", "is_active": true},
+    {"id": "v5", "name": "Spice Paradise", "phone": "9876543214", "address": "Spice Market", "is_active": true},
+    {"id": "v6", "name": "Oil & Ghee Traders", "phone": "9876543215", "address": "Wholesale Market", "is_active": true},
+    {"id": "v7", "name": "Packaging Plus", "phone": "9876543216", "address": "Industrial Park", "is_active": true},
+    {"id": "v8", "name": "Cocoa & Cream Supplies", "phone": "9876543217", "address": "Baker Street", "is_active": true}
+  ],
+  "staff": [
+    {"id": "staff-owner", "name": "Akshay", "role": "owner", "shopId": null, "shop_id": null, "shop_code": null, "pin": "7736"},
+    {"id": "staff-highway", "name": "Highway Teamlead", "role": "highway_staff", "shopId": 0, "shop_id": "shop-highway", "shop_code": "highway", "pin": "1234"},
+    {"id": "staff-mainroad", "name": "Mainroad Teamlead", "role": "mainroad_staff", "shopId": 1, "shop_id": "shop-mainroad", "shop_code": "mainroad", "pin": "1234"},
+    {"id": "staff-production", "name": "Production Staff", "role": "production", "shopId": null, "shop_id": null, "shop_code": null, "pin": "1234"},
+    {"id": "staff-ordering", "name": "Ordering Staff", "role": "ordering", "shopId": null, "shop_id": null, "shop_code": null, "pin": "1234"},
+    {"id": "staff-driver", "name": "Driver", "role": "driver", "shopId": null, "shop_id": null, "shop_code": null, "pin": "1234"}
+  ],
+  "dailyEntries": [],
+  "expenses": [],
+  "orders": [],
+  "customerOrders": [],
+  "goodsInward": [],
+  "marketPurchases": [],
+  "wastage": [],
+  "rawMaterials": [],
+  "recipes": [
+    {"id": "r1", "name": "Premium White Bread", "yield_quantity": 10, "yield_unit": "Loaves", "ingredients": [
+      {"name": "Maida (Flour)", "quantity": 3000, "unit": "g"},
+      {"name": "Yeast", "quantity": 60, "unit": "g"},
+      {"name": "Sugar", "quantity": 120, "unit": "g"},
+      {"name": "Water", "quantity": 1800, "unit": "ml"},
+      {"name": "Salt", "quantity": 45, "unit": "g"},
+      {"name": "Butter", "quantity": 150, "unit": "g"}
+    ]},
+    {"id": "r2", "name": "Chocolate Truffle Cake", "yield_quantity": 4, "yield_unit": "kg", "ingredients": [
+      {"name": "Dark Chocolate", "quantity": 1200, "unit": "g"},
+      {"name": "Fresh Cream", "quantity": 800, "unit": "ml"},
+      {"name": "Cake Pre-mix", "quantity": 1500, "unit": "g"},
+      {"name": "Butter", "quantity": 400, "unit": "g"},
+      {"name": "Eggs", "quantity": 12, "unit": "pcs"}
+    ]},
+    {"id": "r3", "name": "Butter Croissants", "yield_quantity": 20, "yield_unit": "Pcs", "ingredients": [
+      {"name": "Maida (Flour)", "quantity": 2000, "unit": "g"},
+      {"name": "Butter (Lamination)", "quantity": 1000, "unit": "g"},
+      {"name": "Sugar", "quantity": 200, "unit": "g"},
+      {"name": "Yeast", "quantity": 50, "unit": "g"},
+      {"name": "Milk", "quantity": 800, "unit": "ml"}
+    ]}
+  ],
+  "productionBatches": [],
+  "ledger": [],
+  "stockItems": [
+    {"id": "s1", "name": "Maida (Flour)", "quantity": 120000, "unit": "g", "min_threshold": 25000},
+    {"id": "s2", "name": "Sugar", "quantity": 45000, "unit": "g", "min_threshold": 10000},
+    {"id": "s3", "name": "Butter", "quantity": 15000, "unit": "g", "min_threshold": 5000},
+    {"id": "s4", "name": "Yeast", "quantity": 2500, "unit": "g", "min_threshold": 1000},
+    {"id": "s5", "name": "Dark Chocolate", "quantity": 8000, "unit": "g", "min_threshold": 3000},
+    {"id": "s6", "name": "Fresh Cream", "quantity": 12000, "unit": "ml", "min_threshold": 4000},
+    {"id": "s7", "name": "Eggs", "quantity": 120, "unit": "pcs", "min_threshold": 36}
+  ],
+  "stockTransactions": [],
+  "masterItems": [
+    {"id": "m1", "name": "Premium White Bread", "category": "Bread", "price": 45},
+    {"id": "m2", "name": "Brown Wheat Bread", "category": "Bread", "price": 50},
+    {"id": "m3", "name": "Chocolate Truffle Cake", "category": "Cake", "price": 650},
+    {"id": "m4", "name": "Black Forest Cake", "category": "Cake", "price": 550},
+    {"id": "m5", "name": "Butter Croissants", "category": "Pastry", "price": 60},
+    {"id": "m6", "name": "Veg Puff", "category": "Savory", "price": 20},
+    {"id": "m7", "name": "Sweet Buns (Pack)", "category": "Bun", "price": 30}
+  ],
+  "savedProductNames": [],
+  "savedIngredientNames": []
+}
