@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const DB_PATH = path.join(__dirname, 'data', 'db.json');
 
 app.use(cors({
@@ -172,6 +172,17 @@ app.put('/api/store', (req, res) => {
   }
 
   return res.json({ success: true, data: clientDB });
+});
+
+// Serve static frontend files from Vite build in 'dist' directory
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Fallback all non-API GET requests to index.html for React Router
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api/')) {
+    return next();
+  }
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Start server
