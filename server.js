@@ -251,7 +251,7 @@ app.put('/api/store', async (req, res) => {
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Fallback all non-API GET requests to index.html for React Router
-app.get('(.*)', (req, res, next) => {
+app.get('/*splat', (req, res, next) => {
   if (req.path.startsWith('/api/')) {
     return next();
   }
