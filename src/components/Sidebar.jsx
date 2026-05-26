@@ -48,10 +48,19 @@ export default function Sidebar({ activeView, setActiveView, role, isOpen, setIs
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2.5rem' }}>
           <div>
-            <h1 style={{ fontFamily: 'var(--font-title)', fontSize: '1.6rem', color: '#10b981', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ fontSize: '1.8rem' }}>🥖</span> Akshay Bakery
+            <h1 style={{ fontFamily: 'var(--font-title)', fontSize: '1.35rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <img 
+                src="/logo_icon.png" 
+                alt="Akshay Bakery Icon" 
+                className="brand-logo-icon" 
+                style={{ 
+                  height: '30px', 
+                  width: 'auto'
+                }} 
+              />
+              <span>Akshay Bakery</span>
             </h1>
-            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.2rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.3rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
               Operations Shell
             </p>
           </div>

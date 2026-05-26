@@ -69,22 +69,27 @@ export default function App() {
         gap: '1rem',
         fontFamily: 'var(--font-body)'
       }}>
-        <div style={{
-          width: '50px',
-          height: '50px',
-          border: '3px solid rgba(16, 185, 129, 0.15)',
-          borderTop: '3px solid #10b981',
-          borderRadius: '50%',
-          animation: 'spin 1s infinite linear'
-        }} />
-        <h3 style={{ fontFamily: 'var(--font-title)', fontWeight: '600' }}>🥖 Loading Operational Database...</h3>
+        <img 
+          src="/logo_icon.png" 
+          alt="Akshay Bakery" 
+          className="brand-logo-icon animate-pulse" 
+          style={{ 
+            height: '64px', 
+            width: 'auto', 
+            marginBottom: '0.5rem'
+          }} 
+        />
+        <h3 style={{ fontFamily: 'var(--font-title)', fontWeight: '600' }}>Loading Operational Database...</h3>
         <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Checking live server sync</p>
         
-        {/* Spinner CSS injection */}
+        {/* CSS Animations */}
         <style dangerouslySetInnerHTML={{__html: `
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+          .animate-pulse {
+            animation: pulse 1.8s infinite ease-in-out;
+          }
+          @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1.05); }
           }
         `}} />
       </div>

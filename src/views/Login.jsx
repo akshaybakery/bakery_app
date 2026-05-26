@@ -74,12 +74,18 @@ export default function Login() {
       }} />
 
       <div className={`login-glass-card ${isShaking ? 'shake' : ''}`}>
-        <div style={{ marginBottom: '2rem' }}>
-          <span style={{ fontSize: '3rem', filter: 'drop-shadow(0 0 10px rgba(16,185,129,0.4))' }}>🥖</span>
-          <h1 style={{ fontFamily: 'var(--font-title)', fontSize: '2rem', fontWeight: '800', marginTop: '1rem', color: '#f3f4f6' }}>
-            Akshay Bakery
-          </h1>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.25rem', letterSpacing: '0.05em' }}>
+        <div style={{ marginBottom: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <img 
+            src="/logo_full.png" 
+            alt="Akshay Bakery" 
+            className="brand-logo-full" 
+            style={{ 
+              width: '190px', 
+              height: 'auto', 
+              marginBottom: '0.5rem'
+            }} 
+          />
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.25rem', letterSpacing: '0.15em', fontWeight: '700' }}>
             STAFF PORTAL
           </p>
         </div>

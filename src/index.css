@@ -668,3 +668,28 @@ button, select, input, a, .pin-btn, .nav-link {
   box-shadow: 0 0 10px var(--primary-glow);
 }
 
+/* Premium Responsive Logo Coloring Rules */
+.brand-logo-full, .brand-logo-icon {
+  transition: filter 0.3s ease, transform 0.3s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* In Dark Theme (default: glowing bright emerald-white logo) */
+[data-theme='dark'] .brand-logo-full {
+  filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.4));
+}
+
+[data-theme='dark'] .brand-logo-icon {
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.35));
+}
+
+/* In Light Theme (Invert white to matching premium dark-emerald green) */
+[data-theme='light'] .brand-logo-full {
+  filter: invert(1) sepia(91%) saturate(542%) hue-rotate(113deg) brightness(0.45) contrast(95%);
+}
+
+[data-theme='light'] .brand-logo-icon {
+  filter: invert(1) sepia(91%) saturate(542%) hue-rotate(113deg) brightness(0.45) contrast(95%);
+}
+
