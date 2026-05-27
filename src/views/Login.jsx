@@ -125,7 +125,7 @@ export default function Login() {
           </select>
         </div>
 
-        <form onSubmit={(e) => { e.preventDefault(); handleSubmit(pin); }} style={{ maxWidth: '280px', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>
+        <form onSubmit={(e) => { e.preventDefault(); handleSubmit(pin.trim()); }} style={{ maxWidth: '280px', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>
           <div className="form-group" style={{ marginBottom: '1.5rem', position: 'relative', textAlign: 'left' }}>
             <label className="form-label">Security PIN / Password</label>
             <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>

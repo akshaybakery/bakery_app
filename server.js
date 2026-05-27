@@ -244,7 +244,20 @@ app.put('/api/store', async (req, res) => {
     });
   }
 
-  return res.json({ success: true, data: clientDB });
+// GET /api/health - Cloud diagnostic & database integrity check
+app.get('/api/health', async (req, res) => {
+  try {
+    const db = await readDB();
+    return res.json({
+      status: 'healthy',
+      database_mode: pool ? 'postgres' : 'local-fallback',
+      database_seeded: !!db.staff,
+      staff_count: db.staff ? db.staff.length : 0,
+      has_owner_account: db.staff ? db.staff.some(s => s.role === 'owner') : false
+    });
+  } catch (err) {
+    return res.status(500).json({ status: 'unhealthy', error: err.message });
+  }
 });
 
 // Serve static frontend files from Vite build in 'dist' directory
