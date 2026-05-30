@@ -261,7 +261,7 @@ export default function Login() {
               <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem', lineHeight: '1.4' }}>
                 To connect your Android device to this local PC on the same Wi-Fi, enter:<br />
                 <code style={{ background: 'rgba(0,0,0,0.3)', padding: '2px 4px', borderRadius: '4px', color: 'var(--color-primary)', display: 'inline-block', marginTop: '4px', fontSize: '0.8rem' }}>
-                  http://10.228.88.184:5000
+                  http://192.168.29.195:5000
                 </code>
               </p>
             </div>
