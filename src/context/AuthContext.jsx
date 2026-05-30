@@ -29,31 +29,6 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [serverUrl, setServerUrl] = useState(getBaseURL());
 
-  // Listen to changes in server url config
-  const updateServerUrl = useCallback((newUrl) => {
-    let formattedUrl = newUrl.trim();
-    if (formattedUrl) {
-      // If user typed only the Render service name (e.g. 'akshay-bakery') without a dot or protocol
-      if (!formattedUrl.includes('.') && formattedUrl.toLowerCase() !== 'localhost') {
-        formattedUrl = `${formattedUrl}.onrender.com`;
-      }
-      
-      // Auto-prefix protocols if missing
-      if (!/^https?:\/\//i.test(formattedUrl)) {
-        if (/(^localhost)|(^192\.168)|(^10\.)|(^172\.(1[6-9]|2[0-9]|3[0-1]))/i.test(formattedUrl)) {
-          formattedUrl = 'http://' + formattedUrl;
-        } else {
-          formattedUrl = 'https://' + formattedUrl;
-        }
-      }
-    }
-    
-    localStorage.setItem('bakery_server_url', formattedUrl);
-    setServerUrl(formattedUrl);
-    // Reload active session
-    checkSession();
-  }, [checkSession]);
-
   // Check if session cookie is valid on load
   const checkSession = useCallback(async () => {
     const baseUrl = getBaseURL();
@@ -86,6 +61,31 @@ export function AuthProvider({ children }) {
       setLoading(false);
     }
   }, []);
+
+  // Listen to changes in server url config
+  const updateServerUrl = useCallback((newUrl) => {
+    let formattedUrl = newUrl.trim();
+    if (formattedUrl) {
+      // If user typed only the Render service name (e.g. 'akshay-bakery') without a dot or protocol
+      if (!formattedUrl.includes('.') && formattedUrl.toLowerCase() !== 'localhost') {
+        formattedUrl = `${formattedUrl}.onrender.com`;
+      }
+      
+      // Auto-prefix protocols if missing
+      if (!/^https?:\/\//i.test(formattedUrl)) {
+        if (/(^localhost)|(^192\.168)|(^10\.)|(^172\.(1[6-9]|2[0-9]|3[0-1]))/i.test(formattedUrl)) {
+          formattedUrl = 'http://' + formattedUrl;
+        } else {
+          formattedUrl = 'https://' + formattedUrl;
+        }
+      }
+    }
+    
+    localStorage.setItem('bakery_server_url', formattedUrl);
+    setServerUrl(formattedUrl);
+    // Reload active session
+    checkSession();
+  }, [checkSession]);
 
   useEffect(() => {
     checkSession();
