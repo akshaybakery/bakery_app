@@ -142,7 +142,7 @@ export default function DailyEntry() {
   };
 
   return (
-    <div style={{ maxWidth: '640px', margin: '0 auto', animation: 'fade-in 0.3s ease-out' }}>
+    <div style={{ width: '100%', maxWidth: '640px', margin: '0 auto', animation: 'fade-in 0.3s ease-out' }}>
       
       {/* Title */}
       <div className="page-header-row">

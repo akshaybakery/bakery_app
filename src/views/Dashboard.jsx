@@ -141,7 +141,7 @@ export default function Dashboard() {
   const PIE_COLORS = ['#10b981', '#0ea5e9'];
 
   return (
-    <div style={{ animation: 'fade-in 0.4s ease-out' }}>
+    <div style={{ width: '100%', animation: 'fade-in 0.4s ease-out' }}>
       {/* Top action row */}
       <div className="page-header-row">
         <div>

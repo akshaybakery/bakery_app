@@ -124,12 +124,14 @@ export default function Production() {
   };
 
   return (
-    <div style={{ animation: 'fade-in 0.3s ease-out' }}>
+    <div style={{ width: '100%', animation: 'fade-in 0.3s ease-out' }}>
       
       {/* Title */}
-      <div style={{ marginBottom: '2rem' }}>
-        <h1 style={{ fontSize: '2rem', fontFamily: 'var(--font-title)' }}>🧑‍🍳 Production & Recipe scaling</h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Bake batch scaling, bill-of-materials audit, and live bake logs</p>
+      <div className="page-header-row">
+        <div>
+          <h1 style={{ fontSize: '2rem', fontFamily: 'var(--font-title)' }}>🧑‍🍳 Production & Recipe scaling</h1>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Bake batch scaling, bill-of-materials audit, and live bake logs</p>
+        </div>
       </div>
 
       <div className="recipe-scaler-panel" style={{ marginBottom: '2.5rem' }}>

@@ -125,7 +125,7 @@ export default function Settings({ theme, onToggleTheme }) {
   };
 
   return (
-    <div style={{ animation: 'fade-in 0.3s ease-out' }}>
+    <div style={{ width: '100%', animation: 'fade-in 0.3s ease-out' }}>
       
       {/* Title */}
       <div className="page-header-row">
