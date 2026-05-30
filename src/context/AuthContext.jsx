@@ -12,7 +12,7 @@ export const getBaseURL = () => {
   // If running inside Capacitor mobile app, window.location.origin is localhost or capacitor://
   if (typeof window !== 'undefined' && (window.location.origin.includes('localhost') || window.location.origin.startsWith('capacitor'))) {
     // Mobile APK automatically defaults to your secure Render cloud database!
-    return 'https://akshay-bakery.onrender.com';
+    return 'https://bakery-app-slje.onrender.com';
   }
   
   // Browser proxy default for live website
@@ -21,7 +21,7 @@ export const getBaseURL = () => {
   }
   
   // Default fallback to live Render cloud server
-  return 'https://akshay-bakery.onrender.com';
+  return 'https://bakery-app-slje.onrender.com';
 };
 
 export function AuthProvider({ children }) {
