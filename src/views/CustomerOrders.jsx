@@ -116,7 +116,7 @@ export default function CustomerOrders() {
     <div style={{ animation: 'fade-in 0.3s ease-out' }}>
       
       {/* Title */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
+      <div className="page-header-row">
         <div>
           <h1 style={{ fontSize: '2rem', fontFamily: 'var(--font-title)' }}>🎂 Custom Cake & Advance Bookings</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Wedding/Birthday cake reservations, advance payments, and delivery schedule</p>
@@ -140,7 +140,7 @@ export default function CustomerOrders() {
             <Cake size={20} style={{ color: 'var(--primary)' }} /> Book Customized Bakery Order
           </h3>
 
-          <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <form onSubmit={handleSubmit} className="responsive-grid-2" style={{ gap: '1.25rem' }}>
             <div className="form-group">
               <label className="form-label">Customer Full Name *</label>
               <input 

@@ -95,7 +95,7 @@ export default function Wastage() {
     <div style={{ animation: 'fade-in 0.3s ease-out' }}>
       
       {/* Title */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
+      <div className="page-header-row">
         <div>
           <h1 style={{ fontSize: '2rem', fontFamily: 'var(--font-title)' }}>🗑️ Spillage & Wastage Tracker</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Log expired products, damaged items, kitchen spillages, and track operational losses</p>
@@ -120,7 +120,7 @@ export default function Wastage() {
             <Trash2 size={20} /> Log Product Damage / Spillage
           </h3>
 
-          <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <form onSubmit={handleSubmit} className="responsive-grid-2" style={{ gap: '1.25rem' }}>
             <div className="form-group">
               <label className="form-label">Wasted Product</label>
               <select
@@ -192,7 +192,7 @@ export default function Wastage() {
       )}
 
       {/* AGGREGATED CARDS */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+      <div className="responsive-grid-2" style={{ marginBottom: '2rem' }}>
         <div className="glass-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.5rem' }}>
           <div>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Total Operational Loss</p>

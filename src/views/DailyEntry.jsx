@@ -145,13 +145,15 @@ export default function DailyEntry() {
     <div style={{ maxWidth: '640px', margin: '0 auto', animation: 'fade-in 0.3s ease-out' }}>
       
       {/* Title */}
-      <div style={{ marginBottom: '2rem' }}>
-        <h1 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-title)' }}>
-          🥖 Daily Operations Log
-        </h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-          Reconciliation for <span style={{ fontWeight: '700', color: 'var(--primary)' }}>{shopCode.toUpperCase()} BRANCH</span>
-        </p>
+      <div className="page-header-row">
+        <div>
+          <h1 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-title)' }}>
+            🥖 Daily Operations Log
+          </h1>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+            Reconciliation for <span style={{ fontWeight: '700', color: 'var(--primary)' }}>{shopCode.toUpperCase()} BRANCH</span>
+          </p>
+        </div>
       </div>
 
       {success ? (
@@ -218,7 +220,7 @@ export default function DailyEntry() {
 
           {/* STEP 2 */}
           {step === 2 && (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', flexWrap: 'wrap' }}>
+            <div className="responsive-grid-2" style={{ gap: '1rem' }}>
               <div className="form-group">
                 <label className="form-label">Walk-in Customers</label>
                 <input 

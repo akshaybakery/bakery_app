@@ -122,7 +122,7 @@ export default function App() {
           onToggleTheme={handleToggleTheme}
         />
 
-        <main style={{ padding: '2rem 0' }}>
+        <main className="app-main-viewport">
           {activeView === 'dashboard' && user.role === 'owner' && <Dashboard />}
           
           {(activeView === 'daily-entry' && 

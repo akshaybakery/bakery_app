@@ -143,7 +143,7 @@ export default function Dashboard() {
   return (
     <div style={{ animation: 'fade-in 0.4s ease-out' }}>
       {/* Top action row */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
+      <div className="page-header-row">
         <div>
           <h1 style={{ fontSize: '2rem', fontFamily: 'var(--font-title)' }}>Operations Analytics</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Real-time business performance overview</p>
@@ -229,7 +229,7 @@ export default function Dashboard() {
       </div>
 
       {/* Main Charts & Visualizations */}
-      <div style={{ display: 'grid', gridTemplateColumns: shopFilter === 'all' ? '2fr 1fr' : '1fr', gap: '1.5rem', marginBottom: '2.5rem' }}>
+      <div className={`responsive-grid-2-1 ${shopFilter !== 'all' ? 'single-col' : ''}`} style={{ marginBottom: '2.5rem' }}>
         {/* Timeline Area Chart */}
         <div className="glass-panel chart-panel">
           <h3 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -298,7 +298,7 @@ export default function Dashboard() {
       </div>
 
       {/* Critical Stock Alerts & Recent Bookings */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', flexWrap: 'wrap' }}>
+      <div className="responsive-grid-2">
         {/* Stock Alerts Panel */}
         <div className="glass-panel" style={{ padding: '1.5rem' }}>
           <h3 style={{ fontSize: '1.1rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: stats.activeStockAlerts.length > 0 ? 'var(--danger)' : 'var(--text-primary)' }}>

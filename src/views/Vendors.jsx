@@ -139,7 +139,7 @@ export default function Vendors() {
     <div style={{ animation: 'fade-in 0.3s ease-out' }}>
       
       {/* Title */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
+      <div className="page-header-row">
         <div>
           <h1 style={{ fontSize: '2rem', fontFamily: 'var(--font-title)' }}>🌾 Supplier Registry & Ledgers</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Accounts payable, vendor double-entry ledgers, and goods inward raw material invoices</p>
@@ -169,7 +169,7 @@ export default function Vendors() {
           <h3 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-title)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Truck size={20} style={{ color: 'var(--primary)' }} /> Log Inbound Supplier Invoice (Goods Inward)
           </h3>
-          <form onSubmit={handleInwardSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+          <form onSubmit={handleInwardSubmit} className="responsive-grid-2" style={{ gap: '1.25rem' }}>
             <div className="form-group">
               <label className="form-label">Vendor / Supplier</label>
               <select value={selectedVendorId} onChange={(e) => setSelectedVendorId(e.target.value)} className="form-input">
@@ -221,7 +221,7 @@ export default function Vendors() {
           <h3 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-title)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <IndianRupee size={20} style={{ color: 'var(--primary)' }} /> Log Vendor Cash/UPI Payment Outflow
           </h3>
-          <form onSubmit={handlePaymentSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+          <form onSubmit={handlePaymentSubmit} className="responsive-grid-2" style={{ gap: '1.25rem' }}>
             <div className="form-group">
               <label className="form-label">Pay To Vendor</label>
               <select value={payVendorId} onChange={(e) => setPayVendorId(e.target.value)} className="form-input">
@@ -292,7 +292,7 @@ export default function Vendors() {
       
       {/* 1. Accounts Payable & Balances */}
       {activeTab === 'payable' && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '1.5rem', flexWrap: 'wrap' }}>
+        <div className="responsive-grid-1-2">
           {/* Summary Box */}
           <div className="glass-panel" style={{ padding: '1.5rem' }}>
             <h3 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-title)', marginBottom: '1rem' }}>Accounts Balance Summary</h3>

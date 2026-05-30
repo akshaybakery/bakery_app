@@ -128,12 +128,14 @@ export default function Settings({ theme, onToggleTheme }) {
     <div style={{ animation: 'fade-in 0.3s ease-out' }}>
       
       {/* Title */}
-      <div style={{ marginBottom: '2rem' }}>
-        <h1 style={{ fontSize: '2rem', fontFamily: 'var(--font-title)' }}>⚙️ System Settings</h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Configure themes, view credentials, and run server database backups</p>
+      <div className="page-header-row">
+        <div>
+          <h1 style={{ fontSize: '2rem', fontFamily: 'var(--font-title)' }}>⚙️ System Settings</h1>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Configure themes, view credentials, and run server database backups</p>
+        </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', flexWrap: 'wrap' }}>
+      <div className="responsive-grid-2">
         
         {/* Left Side: System Information & Backups */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -144,7 +146,7 @@ export default function Settings({ theme, onToggleTheme }) {
               <Database size={18} style={{ color: 'var(--primary)' }} /> Live Data Inventory
             </h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', fontSize: '0.9rem' }}>
+            <div className="responsive-grid-2" style={{ gap: '1rem', fontSize: '0.9rem' }}>
               <div style={{ background: 'rgba(255,255,255,0.01)', padding: '0.75rem', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
                 <span style={{ color: 'var(--text-secondary)' }}>Daily Sales Entries</span>
                 <div style={{ fontSize: '1.25rem', fontWeight: '700', marginTop: '0.15rem', color: '#fff' }}>{state.dailyEntries?.length || 0} Logs</div>
