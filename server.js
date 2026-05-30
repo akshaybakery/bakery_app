@@ -244,6 +244,9 @@ app.put('/api/store', async (req, res) => {
     });
   }
 
+  return res.json(clientDB);
+});
+
 // GET /api/health - Cloud diagnostic & database integrity check
 app.get('/api/health', async (req, res) => {
   try {

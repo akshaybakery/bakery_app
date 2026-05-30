@@ -8,12 +8,20 @@ export const getBaseURL = () => {
   if (savedUrl) {
     return savedUrl.replace(/\/$/, ''); // Remove trailing slash if present
   }
-  // Browser proxy default
+  
+  // If running inside Capacitor mobile app, window.location.origin is localhost or capacitor://
+  if (typeof window !== 'undefined' && (window.location.origin.includes('localhost') || window.location.origin.startsWith('capacitor'))) {
+    // Mobile APK automatically defaults to your secure Render cloud database!
+    return 'https://akshay-bakery.onrender.com';
+  }
+  
+  // Browser proxy default for live website
   if (typeof window !== 'undefined' && window.location.origin.startsWith('http') && !window.location.origin.includes('localhost:5173')) {
     return '';
   }
-  // Default fallback to local Express server
-  return 'http://localhost:5000';
+  
+  // Default fallback to live Render cloud server
+  return 'https://akshay-bakery.onrender.com';
 };
 
 export function AuthProvider({ children }) {
