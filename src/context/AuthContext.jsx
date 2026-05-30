@@ -57,12 +57,17 @@ export function AuthProvider({ children }) {
   // Check if session cookie is valid on load
   const checkSession = useCallback(async () => {
     const baseUrl = getBaseURL();
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 2500); // 2.5 seconds timeout
+    
     try {
       const response = await fetch(`${baseUrl}/api/session`, {
+        signal: controller.signal,
         headers: {
           'Accept': 'application/json'
         }
       });
+      clearTimeout(timeoutId);
       if (response.ok) {
         const data = await response.json();
         if (data.authenticated) {
@@ -77,6 +82,7 @@ export function AuthProvider({ children }) {
       console.error('Error checking active session:', err);
       setUser(null);
     } finally {
+      clearTimeout(timeoutId);
       setLoading(false);
     }
   }, []);
